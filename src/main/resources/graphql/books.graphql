@@ -1,0 +1,13 @@
+schema{
+    query: Query
+}
+
+type Query {
+    allBooks: [Book]
+    book(id: Long): Book
+}
+
+type Book {
+    book_id: Long
+    name: String
+}

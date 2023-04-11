@@ -1,12 +1,12 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.0.5'
+    id 'org.springframework.boot' version '2.7.3'
     id 'io.spring.dependency-management' version '1.1.0'
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '11'
 
 configurations {
     compileOnly {
@@ -21,12 +21,20 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-graphql'
     implementation 'org.springframework.boot:spring-boot-starter-web-services'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework:spring-webflux'
     testImplementation 'org.springframework.graphql:spring-graphql-test'
+    // graphQL 클래스, 인터페이스를 제공하는 라이브러리
+    implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:11.0.0'
+    runtimeOnly 'com.graphql-java-kickstart:graphiql-spring-boot-starter:11.0.0'
+    // graphQL 쿼리 요청에 사용되는 라이브러리
+    implementation 'com.graphql-java-kickstart:playground-spring-boot-starter:11.0.0'
+    // graphQL 테스트에 사용하는 어노테이션을 제공하는 라이브러리
+    testImplementation 'com.graphql-java-kickstart:graphql-spring-boot-starter-test:11.0.0'
 }
 
 tasks.named('test') {
