@@ -13,9 +13,11 @@ public class BookQueryResolver {
 
     private final BookRepository repository;
 
-    public Book getBookBySn(final String bookSn) {
+    public Book getBookById(final Long bookId) {
+    if (bookId<=0) return null;
+
     return (Book) this.repository
-            .findById(bookSn)
+            .findByBookId(bookId)
             .orElse(null);
     }
 }

@@ -1,13 +1,23 @@
 schema{
-    query: Query
+    query: Query,
+    mutation: Mutation,
 }
 
 type Query {
-    allBooks: [Book]
-    book(id: Long): Book
+    bookById(book_id: Int!) : Book,
+    bookByAuthor(book_author: String!): Book,
+    AllBooks(count:Int, offset: Int): [Book],
 }
 
-type Book {
-    book_id: Long
-    name: String
+type Mutation {
+    createBook(saveBookInfo: SaveBook!): Book!,
+    deleteBookById(book_id: Int!): Boolean,
 }
+
+interface PageInfo {
+    bookPage1 : String!,
+    bookPage2 : String!,
+    bookPage3 : String!,
+    bookPage4 : String!,
+    zipCode : String!,
+]

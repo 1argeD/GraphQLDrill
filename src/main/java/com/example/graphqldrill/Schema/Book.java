@@ -6,24 +6,18 @@ import javax.persistence.*;
 
 
 
-@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name="Book")
 @Entity
 @Getter
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "book_id", nullable = false)
     private Long bookId;
 
-    private String name;
+    @Column(name = "book_author", nullable = false, length = 100)
+    private String bookAuthor;
 
-    public Book(Long bookId, String name) {
-        this.bookId = bookId;
-        this.name = name;
-    }
-
-    public Book() {
-
-    }
 }
