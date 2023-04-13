@@ -28,13 +28,8 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework:spring-webflux'
     testImplementation 'org.springframework.graphql:spring-graphql-test'
-    // graphQL 클래스, 인터페이스를 제공하는 라이브러리
-    implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:11.0.0'
-    runtimeOnly 'com.graphql-java-kickstart:graphiql-spring-boot-starter:11.0.0'
-    // graphQL 쿼리 요청에 사용되는 라이브러리
-    implementation 'com.graphql-java-kickstart:playground-spring-boot-starter:11.0.0'
-    // graphQL 테스트에 사용하는 어노테이션을 제공하는 라이브러리
-    testImplementation 'com.graphql-java-kickstart:graphql-spring-boot-starter-test:11.0.0'
+    implementation 'com.graphql-java:graphql-spring-boot-starter:5.0.2'
+    implementation 'com.graphql-java:graphql-java-tools:5.2.4'
 }
 
 tasks.named('test') {

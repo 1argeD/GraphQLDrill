@@ -1,8 +1,8 @@
 package com.example.graphqldrill.MutationResolver;
 
+import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.example.graphqldrill.Repository.BookRepository;
 import com.example.graphqldrill.Schema.Book;
-import graphql.kickstart.tools.GraphQLMutationResolver;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

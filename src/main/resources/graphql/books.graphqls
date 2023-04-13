@@ -3,10 +3,17 @@ schema{
     mutation: Mutation,
 }
 
+scalar Data
+
 type Query {
     bookById(book_id: Int!) : Book,
-    bookByAuthor(book_author: String!): Book,
     AllBooks(count:Int, offset: Int): [Book],
+}
+
+type Book {
+    bookId: Int!
+    bookTitle:String
+    bookAuthor: String!
 }
 
 type Mutation {
@@ -14,10 +21,8 @@ type Mutation {
     deleteBookById(book_id: Int!): Boolean,
 }
 
-interface PageInfo {
-    bookPage1 : String!,
-    bookPage2 : String!,
-    bookPage3 : String!,
-    bookPage4 : String!,
-    zipCode : String!,
-]
+input SaveBook{
+    bookName: String!
+    bookAuthor: String!
+}
+
